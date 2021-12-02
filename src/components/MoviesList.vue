@@ -1,7 +1,7 @@
 <template>
   <div class="container">
       <div class="row">
-        <div class="col-4" v-for="movie in movies" :key="`movie-${movie.id}`">
+        <div class="col-3" v-for="movie in movies" :key="`movie-${movie.id}`">
             <Card 
                 :title="movie.title"
                 :poster="movie.poster_path"
@@ -39,5 +39,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+    .container {
+        padding: 1rem 0;
+    }
 </style>

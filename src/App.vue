@@ -1,7 +1,7 @@
 <template>
 	<div id="app">
-		<Header @performSearch="searchMoviesAndTV"/>
-		<MoviesList :movies="moviesList" :tvs="TVList"/>
+      <Header @performSearch="searchMoviesAndTV"/>
+      <MoviesList :movies="moviesList" :tvs="TVList"/>
 	</div>
 </template>
 
@@ -59,5 +59,8 @@ export default {
 </script>
 
 <style lang="scss">
-
+  body {
+    height: 100vh;
+    background: red !important;
+  }
 </style>

@@ -51,6 +51,7 @@ export default {
 <style scope lang="scss">
     .card {
         position: relative;
+        margin-bottom: 10px ;
 
         .overlay {
             position: absolute;
