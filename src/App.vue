@@ -78,6 +78,7 @@ export default {
 
 <style lang="scss">
   body {
+    position: relative;
     height: 100vh;
     background: red !important;
   }

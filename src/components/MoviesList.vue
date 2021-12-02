@@ -40,6 +40,7 @@ export default {
 
 <style scoped lang="scss">
     .container {
+        margin-top: 120px;
         padding: 1rem 0;
 
         .row {

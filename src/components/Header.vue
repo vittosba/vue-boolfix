@@ -36,13 +36,20 @@ export default {
 
 <style scoped lang='scss'>
     header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 120px;
         padding: 1rem 0;
-        background: #000;
+        background: rgba(0, 0, 0, .9);
+        z-index: 2;
 
         .container {            
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 100%;
 
             img {
                 margin-right: 20px;
