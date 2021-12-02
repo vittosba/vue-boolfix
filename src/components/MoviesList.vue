@@ -10,7 +10,7 @@
                 :vote=" movie.vote_average"
             />
         </div>
-        <div class="col-4" v-for="tv in tvs" :key="`tv-${tv.id}`">
+        <div class="col-3" v-for="tv in tvs" :key="`tv-${tv.id}`">
             <Card 
                 :title="tv.name"
                 :poster="tv.poster_path"

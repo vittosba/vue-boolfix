@@ -21,16 +21,34 @@ export default {
       moviesList: null,
       TVList: null,
       searchText: '',
+      datas: ''
     }
   },
   methods: {
-    searchMoviesAndTV(text) {
+    searchMoviesAndTV(text, info) {
       if(text !== '') {
         this.searchText = text;
-        axios.get('https://api.themoviedb.org/3/search/movie' , {
+        this.datas = info;
+        if(this.datas === 'all') {
+          console.log('ciao');
+          this.searchMovie(this.searchText);
+          this.searchTV(this.searchText);
+        }
+        else if(this.datas === 'movies') {
+          this.searchMovie(this.searchText);
+          this.TVList = null;
+        }
+        else {
+          this.searchTV(this.searchText);
+          this.moviesList = null;
+        }
+      }
+    },
+    searchMovie(searchText) {
+      axios.get('https://api.themoviedb.org/3/search/movie' , {
           params: {
             api_key: '4dfb8a20463f35995cde083233294355',
-            query: this.searchText,
+            query: searchText,
             language: 'it-IT',
           }
         })
@@ -39,11 +57,12 @@ export default {
           this.moviesList = response.data.results;
         })
         .catch(err => console.log(err));
-
-        axios.get('https://api.themoviedb.org/3/search/tv' , {
+    },
+    searchTV(searchText) {
+      axios.get('https://api.themoviedb.org/3/search/tv' , {
           params: {
             api_key: '4dfb8a20463f35995cde083233294355',
-            query: this.searchText,
+            query: searchText,
             language: 'it-IT',
           }
         })
@@ -52,7 +71,6 @@ export default {
           this.TVList = response.data.results;
         })
         .catch(err => console.log(err));
-      }
     },
   },
 }
